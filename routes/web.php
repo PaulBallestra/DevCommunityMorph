@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UserprofilController;
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
@@ -28,5 +29,7 @@ Route::post('/posts/{post}/like', [PostsController::class, 'like'])->middleware(
 
 //Comments
 Route::post('/posts/{post}/comment', [PostsController::class, 'comment'])->middleware(['auth'])->name('posts.comment');
+//Likes Comments
+Route::post('/comments/{comment}/like', [CommentsController::class, 'like'])->middleware(['auth'])->name('comments.like');
 
 require __DIR__.'/auth.php';

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
@@ -25,7 +26,7 @@ class PostsController extends Controller
         return redirect('/dashboard');
     }
 
-    //Function like
+    //Function like polymorphisme
     public function like(Request $request, Post $post){
 
         //Si déjà liké
@@ -43,10 +44,23 @@ class PostsController extends Controller
     }
 
     //Function comment
-    public function comment(Request $request, Post $psot){
+    public function comment(Request $request, Post $post){
 
-        dd('pute');
+        //dd($request, $post);
 
+        //Validate du body du comment
+        $request->validate([
+            'body' => 'required|string|max:255',
+        ]);
+
+        //Création du post
+        Comment::create([
+            'user_id' => auth()->id(),
+            'post_id' => $post->id,
+            'body' => $request->input('body')
+        ]);
+
+        return redirect()->back();
     }
 
 }

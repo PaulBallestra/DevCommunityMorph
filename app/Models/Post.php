@@ -33,4 +33,9 @@ class Post extends Model
         return $this->likes->where('user_id', Auth::user()->id)->count();
     }
 
+    //Counter comments
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
 }

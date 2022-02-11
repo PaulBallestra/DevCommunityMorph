@@ -14,6 +14,7 @@
         @endif
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+
             <!-- component -->
             <div class="font-sans">
                 <div class="bg-white max-w-md mx-auto my-3 border border-grey-light rounded-t-lg overflow-hidden">
