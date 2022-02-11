@@ -23,7 +23,7 @@ class PostsController extends Controller
             'body' => $request->input('body')
         ]);
 
-        return redirect('/dashboard');
+        return redirect()->back();
     }
 
     //Function like polymorphisme

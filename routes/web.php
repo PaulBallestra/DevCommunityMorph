@@ -17,7 +17,7 @@ Route::get('/mentions', function () {
 
 //Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
 Route::get('/profil', function () { return view('profil'); })->middleware(['auth'])->name('profil');
-Route::get('/dashboard', [HomeController::class, 'dashboard' ])->name('dashboard')->middleware(['auth']);
+Route::get('/community', [HomeController::class, 'dashboard' ])->name('dashboard')->middleware(['auth']);
 
 Route::post('/posts',  [PostsController::class, 'store' ])->name('posts');
 
