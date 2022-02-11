@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
 
+    //Store
     public function store(Request $request){
 
         $request->validate([
@@ -38,6 +39,13 @@ class PostsController extends Controller
         ]);
 
         return redirect()->back();
+
+    }
+
+    //Function comment
+    public function comment(Request $request, Post $psot){
+
+        dd('pute');
 
     }
 

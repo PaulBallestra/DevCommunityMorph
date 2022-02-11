@@ -19,10 +19,8 @@
                     <div class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg" style="min-height: 19rem;">
 
                         <!--  IMAGE  -->
-                        {{-- <img src="{{asset($user->photo)}}" class="card-img-top" alt="..." style="height: 50px;width: 50px">--}}
-
                         @if(Auth::user()->photo)
-                            <img src=" {{ url("imgs/".Auth::user()->photo) }}" class="card-img-top" alt="...">
+                            <img src=" {{ url("imgs/".Auth::user()->photo) }}" class="card-img-top m-auto my-auto" alt="">
                         @endif
 
                         <div class="absolute inset-0 w-full h-full bg-indigo-900 opacity-75"></div>

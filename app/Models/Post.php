@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Post extends Model
 {
-    use HasFactory, Likable;
+    use HasFactory;
 
     protected $fillable = [
         'user_id',
